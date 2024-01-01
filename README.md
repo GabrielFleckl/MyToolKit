@@ -22,7 +22,7 @@ Aqui você pode conferir o layout do projeto. <br>
 
 <br>
 
-  <img alt="layout-web" src="./src/assets/desktop.png" width="100%">
+  <img alt="layout-web" src="./public/desktop.png" width="100%">
 
 ## 🚀 Tecnologias
 
