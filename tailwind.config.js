@@ -10,7 +10,7 @@ export default {
   plugins: [require("daisyui")],
 
   daisyui: {
-    themes: ["forest", "light", "dark", "cyberpunk", "aqua", "dracula"],
+    themes: ["cyberpunk","forest", "light", "dark", "aqua", "dracula"],
     darkTheme: "cyberpunk",
   },
 };

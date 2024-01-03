@@ -14,8 +14,8 @@ function Home() {
     {
       title: "Notion",
       subTitle: "Precisa organizar sua vida ?",
-      path: "/",
-      target: "",
+      path: "https://www.notion.so/",
+      target: "_blank",
     },
     {
       title: "Speed Test",
