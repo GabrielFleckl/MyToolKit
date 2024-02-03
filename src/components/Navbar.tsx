@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 function Navbar() {
   const {
     t,
-    i18n: { changeLanguage, language },
+    i18n: { changeLanguage },
   } = useTranslation();
 
   const themes = [
