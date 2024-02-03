@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  
   const themes = [
     "light",
     "dark",

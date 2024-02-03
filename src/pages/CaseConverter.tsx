@@ -58,18 +58,18 @@ function CaseConverter() {
 
   return (
     <section className="flex flex-col gap-4 justify-center md:h-[70vh] h-[80vh] items-center w-full">
-      <div className="flex flex-wrap w-96 gap-y-2 md:w-full md:gap-2 justify-center items-center">
+      <div className="flex flex-wrap w-80 gap-2 md:w-full md:gap-2 justify-center items-center">
         <button
           onClick={handleUpperCaseClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Maiúsculas
+          Uppercase
         </button>
         <button
           onClick={handleLowerCaseClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Minusculas
+          Lowercase
         </button>
         <button
           onClick={handleTitleCaseClick}
@@ -81,39 +81,39 @@ function CaseConverter() {
           onClick={handleClearTextAreaClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Limpar
+          Clear
         </button>
         <button
           onClick={handleCopyTextAreaClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Copiar
+          Copy
         </button>
       </div>
       <textarea
-        placeholder="Escreva ou cole seu texto aqui!"
+        placeholder="Write or paste your text here!"
         className="textarea-lg bg-base-200 w-full md:w-3/4 resize-none rounded-md pb-80 textarea-primary"
         onChange={(e) => setTextAreaValue(e.target.value)}
         value={textAreaValue}
         ref={textAreaRef}
       ></textarea>
-      <div className="flex flex-col text-center ">
+      <div className="flex flex-col md:flex-row md:gap-4 text-center ">
         <div className="text-sm">
           <p>
-            Contagem de palavras:{" "}
+          Word Count:{" "}
             <span> {wordValue === 1 ? "0" : wordValue} </span>
           </p>
         </div>
         <div className="text-sm">
           <p>
-            Contagem de Letras: <span> {letterValue} </span>
+          Letter Count: <span> {letterValue} </span>
           </p>
         </div>
       </div>
 
       <div
         role="alert"
-        className={`alert alert-success absolute w-96 right-2 top-5 pointer-events-none ${
+        className={`alert alert-success absolute w-60 top-5 md:w-96 md:right-2 md:top-5 pointer-events-none ${
           isCopied
             ? "opacity-100 transition-all duration-300 z-10"
             : "opacity-0 transition-all duration-300"
@@ -132,7 +132,7 @@ function CaseConverter() {
             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Text Copiado com sucesso!</span>
+        <span>Text Copied Successfully!</span>
       </div>
     </section>
   );
