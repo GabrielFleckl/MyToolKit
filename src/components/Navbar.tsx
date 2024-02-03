@@ -1,7 +1,55 @@
+import { useState, useEffect, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const themes = ["light", "dark", "cyberpunk", "forest", "aqua", "dracula"];
+  const themes = [
+    "light",
+    "dark",
+    "cupcake",
+    "bumblebee",
+    "emerald",
+    "corporate",
+    "synthwave",
+    "retro",
+    "cyberpunk",
+    "valentine",
+    "halloween",
+    "garden",
+    "forest",
+    "aqua",
+    "lofi",
+    "pastel",
+    "fantasy",
+    "wireframe",
+    "black",
+    "luxury",
+    "dracula",
+    "cmyk",
+    "autumn",
+    "business",
+    "acid",
+    "lemonade",
+    "night",
+    "coffee",
+    "winter",
+    "dim",
+    "nord",
+    "sunset",
+  ];
+
+  const storedTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "light";
+
+  const [currentTheme, setCurrentTheme] = useState<any>(storedTheme);
+
+  const setDark = (theme: any) => {
+    const dataTheme = document.querySelector("html") as HTMLElement;
+    dataTheme.setAttribute("data-theme", theme);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", currentTheme);
+    setDark(storedTheme);
+  }, [currentTheme]);
 
   return (
     <>
@@ -84,7 +132,7 @@ function Navbar() {
             <li>
               <details>
                 <summary>Themes</summary>
-                <ul className="p-2 bg-base-100 rounded-t-none h-100">
+                <ul className="p-2 bg-base-100 rounded-t-none h-52 overflow-x-hidden">
                   {themes.map((theme) => (
                     <li>
                       <input
@@ -92,8 +140,11 @@ function Navbar() {
                         name="theme-dropdown"
                         className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                         aria-label={theme}
+                        onClick={(e) => {
+                          setCurrentTheme(e.currentTarget.value);
+                        }}
                         value={theme}
-                        key={themes.length}
+                        key={theme.length}
                       />
                     </li>
                   ))}
