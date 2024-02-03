@@ -1,0 +1,52 @@
+{
+  "home": {
+    "cards": {
+      "caseConverter": {
+        "title": "Case converter",
+        "subTitle": "Do you want to change some text from lowercase to uppercase or capital letters?"
+      },
+      "notion": {
+        "title": "Notion",
+        "subTitle": "Need to organize your life?"
+      },
+      "speedtest": {
+        "title": "Speed Test",
+        "subTitle": "Test your internet speed?"
+      },
+      "macvendors": {
+        "title": "MacVendors",
+        "subTitle": "Want to find MAC address providers?"
+      },
+      "lacnic": {
+        "title": "IP´s LACNIC",
+        "subTitle": "Find information about a specific IP?"
+      },
+      "downdetector": {
+        "title": "Downdetector",
+        "subTitle": "Monitor problems and service outages in real time?"
+      }
+    }
+  },
+  "navbar": {
+    "home":"Home",
+    "patterns":"Patterns",
+    "contact": "Contact",
+    "about": "About",
+    "theme": "Theme"
+  },
+  "caseConverter": {
+    "lowercase": "Lowercase",
+    "uppercase": "Uppercase",
+    "titleCase": "Title case",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copyToast":"Text Copied Successfully!",
+    "placeholder": "Write or paste your text here!",
+    "wordCount":"Word Count",
+    "letterCount":"Letter Count"
+
+  },
+  "footer": {
+    "footer": "Made with ❤️ by "
+  }
+}

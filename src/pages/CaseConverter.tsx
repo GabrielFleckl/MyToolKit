@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function CaseConverter() {
+  const { t } = useTranslation();
+
   const textAreaRef = useRef<null>(null);
 
   const [textAreaValue, setTextAreaValue] = useState<string>("");
@@ -63,35 +66,35 @@ function CaseConverter() {
           onClick={handleUpperCaseClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Uppercase
+          {t("caseConverter:uppercase")}
         </button>
         <button
           onClick={handleLowerCaseClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Lowercase
+          {t("caseConverter:lowercase")}
         </button>
         <button
           onClick={handleTitleCaseClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Title Case
+          {t("caseConverter:titleCase")}
         </button>
         <button
           onClick={handleClearTextAreaClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Clear
+          {t("caseConverter:clear")}
         </button>
         <button
           onClick={handleCopyTextAreaClick}
           className="btn active:bg-primary hover:bg-base-300"
         >
-          Copy
+          {t("caseConverter:copy")}
         </button>
       </div>
       <textarea
-        placeholder="Write or paste your text here!"
+        placeholder={t("caseConverter:placeholder")}
         className="textarea-lg bg-base-200 w-full md:w-3/4 resize-none rounded-md pb-80 textarea-primary"
         onChange={(e) => setTextAreaValue(e.target.value)}
         value={textAreaValue}
@@ -100,13 +103,12 @@ function CaseConverter() {
       <div className="flex flex-col md:flex-row md:gap-4 text-center ">
         <div className="text-sm">
           <p>
-          Word Count:{" "}
-            <span> {wordValue === 1 ? "0" : wordValue} </span>
+          {t("caseConverter:wordCount")}: <span> {wordValue === 1 ? "0" : wordValue} </span>
           </p>
         </div>
         <div className="text-sm">
           <p>
-          Letter Count: <span> {letterValue} </span>
+          {t("caseConverter:letterCount")}: <span> {letterValue} </span>
           </p>
         </div>
       </div>
@@ -132,7 +134,7 @@ function CaseConverter() {
             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Text Copied Successfully!</span>
+        <span>{t("caseConverter:copyToast")}</span>
       </div>
     </section>
   );

@@ -1,0 +1,52 @@
+{
+  "home": {
+    "cards": {
+      "caseConverter": {
+        "title": "Case converter",
+        "subTitle": "Deseja alterar algum texto de minúsculas para maiúsculas ou maiúsculas?"
+      },
+      "notion": {
+        "title": "Notion",
+        "subTitle": "Precisa organizar sua vida ?"
+      },
+      "speedtest": {
+        "title": "Teste de velocidade",
+        "subTitle": "Testar a velocidade da sua internet ?"
+      },
+      "macvendors": {
+        "title": "MacVendors",
+        "subTitle": "Encontrar fornecedor pelo MAC ?"
+      },
+      "lacnic": {
+        "title": "IP´s LACNIC",
+        "subTitle": "Encontrar informações sobre um IP especifico ?"
+      },
+      "downdetector": {
+        "title": "Downdetector",
+        "subTitle": "Monitorar problemas e quedas de serviços em tempo real ?"
+      }
+    }
+  },
+  "navbar": {
+    "home":"Home",
+    "patterns":"Padrões",
+    "contact": "Contato",
+    "about": "Sobre",
+    "theme": "Tema"
+  },
+  "caseConverter": {
+    "lowercase": "Minúsculas",
+    "uppercase": "Maiúsculas",
+    "titleCase": "Title case",
+    "clear": "Limpar",
+    "copy": "Copiar",
+    "copyToast":"Texto copiado com sucesso!",
+    "placeholder": "Escreva ou cole seu texto aqui!",
+    "wordCount":"Contagem de palavras",
+    "letterCount":"Contagem de letras"
+
+  },
+  "footer": {
+    "footer": "Feito com ❤️ por"
+  }
+}

@@ -2,42 +2,46 @@ import Card from "../components/Card";
 
 import { Link } from "react-router-dom";
 
+import { useTranslation } from 'react-i18next';
+
 function Home() {
+
+  const { t } = useTranslation();
+
   const cardContent = [
     {
       title: "Case Converter",
-      subTitle:
-        "Quer colocar algum texto de minusculo para MAIÚSCULO ou Title Case ?",
+      subTitle: t("home:cards.caseConverter.subTitle"),
       path: "/case-converter",
       target: "",
     },
     {
       title: "Notion",
-      subTitle: "Precisa organizar sua vida ?",
+      subTitle: t("home:cards.notion.subTitle"),
       path: "https://www.notion.so/",
       target: "_blank",
     },
     {
-      title: "Speed Test",
-      subTitle: "Testar a velocidade da internet ?",
+      title: t("home:cards.speedtest.title"),
+      subTitle: t("home:cards.speedtest.subTitle"),
       path: "https://www.speedtest.net/pt",
       target: "_blank",
     },
     {
-      title: "MacVendors",
-      subTitle: "Encontrar endereços MAC ?",
+      title: t("home:cards.macvendors.title"),
+      subTitle: t("home:cards.macvendors.subTitle"),
       path: "https://macvendors.com/",
       target: "_blank",
     },
     {
-      title: "IP´s LACNIC",
-      subTitle: "Encontrar informações sobre um IP especifico ?",
+      title: t("home:cards.lacnic.title"),
+      subTitle: t("home:cards.lacnic.subTitle"),
       path: "https://query.milacnic.lacnic.net/home",
       target: "_blank",
     },
     {
-      title: "Downdetector",
-      subTitle: "Monitorar problemas e quedas de serviços em tempo real ?",
+      title: t("home:cards.downdetector.title"),
+      subTitle: t("home:cards.downdetector.subTitle"),
       path: "https://downdetector.com.br/",
       target: "_blank",
     },
@@ -48,7 +52,7 @@ function Home() {
       <main className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 place-items-center pb-14 pt-5">
         {cardContent.map((card) => (
           <Link className="w-full" target={card.target} to={card.path}>
-            <Card title={card.title} text={card.subTitle} />
+            <Card title={card.title} text={card.subTitle} key={cardContent.length}/>
           </Link>
         ))}
       </main>
