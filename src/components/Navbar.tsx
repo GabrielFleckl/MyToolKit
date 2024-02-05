@@ -64,20 +64,21 @@ function Navbar() {
 
   // Themes
 
-  const storedTheme = localStorage.getItem("theme")
-    ? localStorage.getItem("theme")
-    : "light";
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
 
-  const [currentTheme, setCurrentTheme] = useState<any>(storedTheme);
+  const storedTheme = localStorage.getItem("theme");
 
-  const setDark = (theme: any) => {
+  const setTheme = (theme: string) => {
     const dataTheme = document.querySelector("html") as HTMLElement;
     dataTheme.setAttribute("data-theme", theme);
   };
 
   useEffect(() => {
     localStorage.setItem("theme", currentTheme);
-    setDark(storedTheme);
+
+    if (storedTheme !== null) {
+      setTheme(storedTheme);
+    }
   }, [currentTheme]);
 
   return (
