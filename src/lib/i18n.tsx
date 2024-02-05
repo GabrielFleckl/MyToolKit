@@ -10,9 +10,11 @@ const resources = {
   pt: { ...ptLang },
 };
 
+const storedLang: string | null = localStorage.getItem("lang")
+
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: storedLang || "en",
   interpolation: {
     escapeValue: false,
   },

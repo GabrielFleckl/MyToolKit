@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 function Navbar() {
   const {
     t,
-    i18n: { changeLanguage },
+    i18n: { changeLanguage, language },
   } = useTranslation();
 
   const themes = [
@@ -43,15 +43,26 @@ function Navbar() {
     "sunset",
   ];
 
+  // i18n
   const langs = ["EN", "PT-BR"];
 
-  // Guardar lang no local storage
-  const handleChangeLang = (e: any) => {
-    const newLang = e.currentTarget.value === "EN" ? "en" : "pt";
-    changeLanguage(newLang);
+  const [currentLang, setCurrentLang] = useState<string>(language);
+
+  const handleChangeLang = (e: React.MouseEvent<HTMLInputElement>) => {
+    const newLang: string = e.currentTarget.value === "EN" ? "en" : "pt";
+    localStorage.setItem("lang", newLang);
+    setCurrentLang(newLang);
   };
 
-  // console.log(currentLang);
+  useEffect(() => {
+    const myLang: string | null = localStorage.getItem("lang");
+
+    if (myLang !== null) {
+      changeLanguage(myLang);
+    }
+  }, [currentLang]);
+
+  // Themes
 
   const storedTheme = localStorage.getItem("theme")
     ? localStorage.getItem("theme")
