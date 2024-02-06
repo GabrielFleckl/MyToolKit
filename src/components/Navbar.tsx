@@ -63,10 +63,11 @@ function Navbar() {
   }, [currentLang]);
 
   // Themes
+  const storedTheme = localStorage.getItem("theme")
+    ? localStorage.getItem("theme")
+    : "light";
 
-  const [currentTheme, setCurrentTheme] = useState<string>("light");
-
-  const storedTheme = localStorage.getItem("theme");
+  const [currentTheme, setCurrentTheme] = useState<any>(storedTheme);
 
   const setTheme = (theme: string) => {
     const dataTheme = document.querySelector("html") as HTMLElement;
